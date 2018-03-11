@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Fifth Settlement Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <input placeholder="Search for your favourite place in fifth settelment" id="search-box" data-bind="textInput: searchTerm, valueUpdate: 'afterkeydown'" />
+    <div class="app" id="app">
+        <div class="list" id="list">
+            <ul id="results" data-bind="foreach: filteredList">
+                <li class="place" id="place" data-bind="text: name, click: bounce, event: { mouseover: changeColor, mouseout: resetColor }"></li>
+            </ul>
+        </div>
+        <div class="map" id="map">Error happened, Try Again later</div>
+    </div>
+    <script src='js/knockout-3.4.0.js'></script>
+    <script src='js/jquery-1.12.0.min.js'></script>
+    <script src='js/script.js'></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTCsKkm0Az7QaEstM-8ETE933KDaeDvY8&callback=runApplication" onerror="handleError()"></script>
+</body>
+
+</html>
